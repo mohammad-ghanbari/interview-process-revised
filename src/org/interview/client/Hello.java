@@ -174,7 +174,7 @@ public class Hello implements EntryPoint {
                                 serverResponseLabel.setHTML(result);
                                 dialogBox.center();
                                 closeButton.setFocus(true);
-								numberOfCompletedCall = countCallService.countCall(numberOfCompletedCall);
+				numberOfCompletedCall = countCallService.countCall(numberOfCompletedCall);
                             }
                         });
             }
