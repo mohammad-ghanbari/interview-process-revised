@@ -91,6 +91,7 @@ public class Hello implements EntryPoint {
 	    nameField.setText("Gwt User");
         // We can add style names to widgets
         sendButton.addStyleName("sendButton");
+		sendButton.addStyleName("red");
         
         // Focus the cursor on the name field when the app loads
         nameField.setFocus(true);
@@ -173,6 +174,7 @@ public class Hello implements EntryPoint {
                                 serverResponseLabel.setHTML(result);
                                 dialogBox.center();
                                 closeButton.setFocus(true);
+								numberOfCompletedCall = countCallService.countCall(numberOfCompletedCall);
                             }
                         });
             }
@@ -183,6 +185,41 @@ public class Hello implements EntryPoint {
         sendButton.addClickHandler(handler);
         nameField.addKeyUpHandler(handler);
 
+		
+		// Create a handler for the clear person button
+        class MyHandler2 implements ClickHandler {
+            /**
+             * Fired when the user clicks on the clearPersonButton.
+             */
+            public void onClick(ClickEvent event) {
+                // clear person's text box
+				personName.setText("");
+				personId.setText("");
+            }
+
+        }
+
+        // Add a handler to clear person information
+        MyHandler2 handler2 = new MyHandler2();
+        clearPersonButton.addClickHandler(handler2);     
+		
+		
+		// Create a handler for the countCall button
+        class MyHandler3 implements ClickHandler {
+            /**
+             * Fired when the user clicks on the countCallButton.
+             */
+            public void onClick(ClickEvent event) {
+				countCallLabel.setText(String.valueOf(numberOfCompletedCall));
+            }
+
+        }
+
+        // Add a handler to count call button
+        MyHandler3 handler3 = new MyHandler3();
+        countCallButton.addClickHandler(handler3);  
+		
+		
         /* Layout for person information*/
         FlexTable layout = new FlexTable();
         layout.setCellSpacing(6);
@@ -244,5 +281,10 @@ public class Hello implements EntryPoint {
 		personId.setText(String.valueOf(person.getPersonID()));
 		personName.setText(person.getName());
 	}
+	
+	
+	/* Count Call Button */
+	
+	
 	
 }
