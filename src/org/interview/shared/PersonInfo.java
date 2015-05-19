@@ -24,8 +24,9 @@ public class PersonInfo implements IsSerializable {
     public ArrayList<LocationInfo> getAddresses() { return addresses; }
     public void setAddresses(ArrayList<LocationInfo> addresses) { this.addresses = addresses; }
     
+    // in the question it wasn't clear what is the purpose of this method!
     public String getName(){
-        return "";
+        return firstName + lastName;
     }
     
 }
