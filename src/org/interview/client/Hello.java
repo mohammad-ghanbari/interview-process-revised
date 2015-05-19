@@ -91,7 +91,7 @@ public class Hello implements EntryPoint {
 	    nameField.setText("Gwt User");
         // We can add style names to widgets
         sendButton.addStyleName("sendButton");
-		sendButton.addStyleName("red");
+	sendButton.addStyleName("red");
         
         // Focus the cursor on the name field when the app loads
         nameField.setFocus(true);
@@ -186,15 +186,15 @@ public class Hello implements EntryPoint {
         nameField.addKeyUpHandler(handler);
 
 		
-		// Create a handler for the clear person button
+	// Create a handler for the clear person button
         class MyHandler2 implements ClickHandler {
             /**
              * Fired when the user clicks on the clearPersonButton.
              */
             public void onClick(ClickEvent event) {
                 // clear person's text box
-				personName.setText("");
-				personId.setText("");
+		personName.setText("");
+		personId.setText("");
             }
 
         }
@@ -204,13 +204,13 @@ public class Hello implements EntryPoint {
         clearPersonButton.addClickHandler(handler2);     
 		
 		
-		// Create a handler for the countCall button
+	// Create a handler for the countCall button
         class MyHandler3 implements ClickHandler {
             /**
              * Fired when the user clicks on the countCallButton.
              */
             public void onClick(ClickEvent event) {
-				countCallLabel.setText(String.valueOf(numberOfCompletedCall));
+		countCallLabel.setText(String.valueOf(numberOfCompletedCall));
             }
 
         }
